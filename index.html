@@ -30,8 +30,9 @@
             align-items: center;
         }
         .header .overlay h1 {
-            font-size: 5rem;
+            font-size: 3.5rem; /* Adjust for smaller screens */
             color: white;
+            text-align: center;
         }
         .description {
             text-align: center;
@@ -40,6 +41,7 @@
         }
         .content {
             display: flex;
+            flex-wrap: wrap; /* Ensures boxes wrap on smaller screens */
             justify-content: center;
             padding: 20px;
         }
@@ -49,6 +51,7 @@
             padding: 20px;
             background-color: #3b3b6d;
             border-radius: 10px;
+            min-width: 250px; /* Ensures boxes don't get too narrow */
         }
         .content .box h2 {
             text-align: center;
@@ -76,6 +79,23 @@
         }
         .buttons a:hover {
             background-color: #7C7CE6;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            .header .overlay h1 {
+                font-size: 2.5rem;
+            }
+            .content .box {
+                flex-basis: calc(50% - 20px);
+                max-width: calc(50% - 20px);
+            }
+        }
+        @media (max-width: 576px) {
+            .content .box {
+                flex-basis: calc(100% - 20px);
+                max-width: calc(100% - 20px);
+            }
         }
     </style>
 </head>
